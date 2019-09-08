@@ -1,17 +1,39 @@
-Decimal
+decimal-easy
 ======
 
 Simple decimal arithmetic for the browser *and* node.js!
+
+Forked from [https://github.com/shinuza/decimal-js], but resolved a lots of issues:
+
+- https://github.com/shinuza/decimal-js/issues/4
+- https://github.com/shinuza/decimal-js/issues/9
+- https://github.com/shinuza/decimal-js/issues/6
+
+And It's different with [decimal.js](https://github.com/MikeMcl/decimal.js).
+
+decimal.js implements decimal operation by itself, so it's arbitrary-precision,
+but decimal-easy not, It respects the precision from javascript engine, eg.
+
+```javascript
+// javascript
+1 / 3 * 3 // => 1
+// decimal.js
+new DecimalJS(1).div(3).mul(3) // => '0.99999999999999999999'
+// decimal-easy
+new Decimal(1).div(3).mul(3) // => 1
+```
+
+And It's more lighter-weight and faster than decimal.js
 
 
 Why?
 =======
 
-    Why don’t my numbers, like 0.1 + 0.2 add up to a nice round 0.3,
-    and instead I get a weird result like 0.30000000000000004?
+Why don’t my numbers, like 0.1 + 0.2 add up to a nice round 0.3,
+and instead I get a weird result like 0.30000000000000004?
 
-    Because internally, computers use a format (binary floating-point)
-    that cannot accurately represent a number like 0.1, 0.2 or 0.3 at all.
+Because internally, computers use a format (binary floating-point)
+that cannot accurately represent a number like 0.1, 0.2 or 0.3 at all.
 
 Source : http://floating-point-gui.de/
 

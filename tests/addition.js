@@ -17,3 +17,7 @@ assert.equal(Decimal('1001.0').add('7.12'), '1008.12');
 
 assert.equal(Decimal('1001.0').add('7.12'), Decimal.add('1001.0', '7.12').toString());
 assert.equal(Decimal('1001.0').add('-7.12'), Decimal.add('1001.0', '-7.12').toString());
+
+assert.equal(Decimal('0.00000051').add('0.00000001').toNumber(), 5.2e-7);
+assert.equal(Decimal(0.00000051).add('0.00000001').toNumber(), 5.2e-7);
+assert.equal(Decimal(0.00000051).add(0.00000001).toNumber(), 5.2e-7);

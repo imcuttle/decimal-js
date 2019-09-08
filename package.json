@@ -1,5 +1,5 @@
 {
-  "name": "decimal",
+  "name": "decimal-easy",
   "description": "Simple decimal arithmetic for the browser and node.js!",
   "author": "Samori Gorse <samorigorse@gmail.com>",
   "version": "0.0.2",
@@ -9,6 +9,10 @@
     "float",
     "calculation"
   ],
+  "scripts": {
+    "test": "node tests/runner.js",
+    "prepublish": "npm test"
+  },
   "main": "./lib/decimal",
   "repository": {
     "type": "git",
